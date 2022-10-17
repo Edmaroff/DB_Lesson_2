@@ -75,7 +75,7 @@ CREATE TABLE IF NOT EXISTS Albums (
 	album_id SERIAL      PRIMARY KEY,
 	name     VARCHAR(60) NOT NULL,
 	date     DATE        NOT NULL
-                         CHECK(date > 1951-01-01)
+	         CHECK(date > 1951-01-01)
 );
 
 CREATE TABLE IF NOT EXISTS Performers_Albums (
@@ -88,11 +88,7 @@ CREATE TABLE IF NOT EXISTS Tracks (
 	track_id SERIAL      PRIMARY KEY,
 	name     VARCHAR(60) NOT NULL,
 	duration INTEGER     NOT NULL
-<<<<<<< HEAD
 	         CHECK(duration BETWEEN 1 AND 5000),
-=======
-             CHECK(duration BETWEEN 1 AND 5000),
->>>>>>> cda8a2a0b3254300f529cc32043905c3ef97b6a2
 	album_id INTEGER     REFERENCES Albums(album_id)
 );
 
@@ -100,11 +96,7 @@ CREATE TABLE IF NOT EXISTS Collections (
 	collection_id SERIAL      PRIMARY KEY,
 	name          VARCHAR(60) NOT NULL,
 	date          DATE        NOT NULL
-<<<<<<< HEAD
 	              CHECK(date > 1860-04-09)
-=======
-                  CHECK(date > 1860-04-09)
->>>>>>> cda8a2a0b3254300f529cc32043905c3ef97b6a2
 );
 
 CREATE TABLE IF NOT EXISTS Collections_Tracks (
