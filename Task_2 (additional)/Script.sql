@@ -1,0 +1,11 @@
+CREATE TABLE IF NOT EXISTS Departments (
+Department_ID SERIAL PRIMARY KEY,
+name VARCHAR(60) NOT NULL
+);
+
+CREATE TABLE IF NOT EXISTS Employees (
+	Employee_ID SERIAL PRIMARY KEY,
+	name VARCHAR(60) NOT NULL,
+	Department_ID INTEGER REFERENCES Departments(Department_ID),
+	Chief_ID INTEGER REFERENCES Employees(Employee_ID)
+);
