@@ -72,10 +72,10 @@ CREATE TABLE IF NOT EXISTS Performers_Genres (
 );
 
 CREATE TABLE IF NOT EXISTS Albums (
-	album_id SERIAL      PRIMARY KEY,
-	name     VARCHAR(60) NOT NULL,
-	date     DATE        NOT NULL
-	         CHECK(date > 1951-01-01)
+	album_id     SERIAL      PRIMARY KEY,
+	name         VARCHAR(60) NOT NULL,
+	release_date DATE        NOT NULL
+	             CHECK(release_date > 1951-01-01)
 );
 
 CREATE TABLE IF NOT EXISTS Performers_Albums (
@@ -95,8 +95,8 @@ CREATE TABLE IF NOT EXISTS Tracks (
 CREATE TABLE IF NOT EXISTS Collections (
 	collection_id SERIAL      PRIMARY KEY,
 	name          VARCHAR(60) NOT NULL,
-	date          DATE        NOT NULL
-	              CHECK(date > 1860-04-09)
+	release_date  DATE        NOT NULL
+	              CHECK(release_date > 1860-04-09)
 );
 
 CREATE TABLE IF NOT EXISTS Collections_Tracks (
